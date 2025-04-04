@@ -30,6 +30,8 @@ const CategorySchema = new Schema(
       type: String,
       default: "",
     },
+    importLine: { type: Number, default: null },
+    importType: { type: String, default: "category" },
   },
   {
     timestamps: true,

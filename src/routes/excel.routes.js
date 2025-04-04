@@ -19,4 +19,14 @@ router.post(
   excelController.uploadExcel
 );
 
+// POST /api/excel/upload-merge
+router.post(
+  "/upload-merge",
+  protect,
+  authorizeRoles("admin", "superadmin"),
+  upload.single("file"),
+  checkExcelRestaurantAccess,
+  excelController.uploadExcelMerge
+);
+
 module.exports = router;
